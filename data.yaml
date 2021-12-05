@@ -1,0 +1,17 @@
+proxies:
+  - endpoint: /examples
+    api_version: v1
+    methods: 
+      - GET
+      - POST
+    headers:
+      contentType: application/json
+      authorization: Bearer token
+    http_result: 200
+    body: >
+        {
+          "example": "string",
+          "number": 1,
+          "float": 1.1,
+          "date": "05/12/2021"
+        }
