@@ -39,8 +39,7 @@ func NewServer() *Server {
 // Start method to start the server configurations
 func (s *Server) Start(address string, port string, prxies *proxies.Proxies) error {
 	var err error
-	api := s.app.Group("/api")
-	proxies.AddRoutesTo(api, prxies)
+	proxies.AddRoutesTo(s.app, prxies)
 
 	s.wg.Add(1)
 	go func() {
